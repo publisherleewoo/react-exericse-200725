@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #a+p {
+            color: blue
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="a">a</div>
+    <p>b</p>
+
+    <!-- <script>
+        // let myFirstPromise = new Promise((resolve, reject) => {
+        //     reject("error")
+        //     setTimeout(function () {
+        //         resolve("Success!");
+        //     }, 250);
+        // });
+
+        // myFirstPromise.then((reciveResolveParam) => {
+        //     console.log("Yay! " + reciveResolveParam);
+        // }).catch(reciveRejectParam => {
+        //     console.log(reciveRejectParam)
+        // })
+
+        function increase(number) {
+            const promise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const result = number + 10;
+                    if (result > 10) {
+                        const e = new Error("NumberTooBig")
+                        return reject(e)
+                    }
+                    resolve(result)
+                }, 1000)
+            })
+            return promise;
+        }
+
+        increase(0).then(number => {
+            console.log(number)
+            return increase(number)
+        }).then(number => {
+            console.log(number)
+            return increase(number)
+        }).then(number => {
+            console.log(number)
+            return increase(number)
+        }).catch(e => {
+            console.log("에러", e)
+        })
+
+
+        async function runTasks() {
+            try {
+                let result = await increase(0)
+                console.log(result)
+                result = await increase(result)
+                console.log(result)
+                result = await increase(result)
+                console.log(result)
+                result = await increase(result)
+                console.log(result)
+                result = await increase(result)
+                console.log(result)
+
+            } catch (e) {
+                console.log(e)
+            }
+        }
+        runTasks()
+
+    </script> -->
+</body>
+
+</html>
